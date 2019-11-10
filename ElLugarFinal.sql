@@ -1,0 +1,5 @@
+CREATE DATABASE nombreDB CHARACTER SET utf8mb4;
+
+CREATE USER administrador@localhost IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON ElLugarFinalDB.* TO administrador@localhost;
+FLUSH PRIVILEGES;
