@@ -13,22 +13,22 @@ class Supervisor(CustomUser):
 
 	def asignar_Ruta(Cobrador):
    		return True;
-   	def eliminar_visita():
+	def eliminar_visita():
+		return True;
+	def modificar_visita():
    		return True;
-   	def modificar_visita():
-   		return True;
-   	def agregar_visita():
-   		return True;
-   	def asignar_perfil():
-   		return True;
-   	def asignar_usuario():
-   		return True;
-   	def modificar_usuario():
-   		return True;
-   	def eliminar_usuario():
-   		return True;
+	def agregar_visita():
+		return True;
+	def asignar_perfil():
+		return True;
+	def asignar_usuario():
+		return True;
+	def modificar_usuario():
+		return True;
+	def eliminar_usuario():
+		return True;
 
 class Cobrador(CustomUser):
 	id_cobrador = models.IntegerField(null=False)
 	def MostrarRutas():
-   		return True;
+		return True;
