@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.contrib.auth.models import User
 
 class CustomUser(AbstractUser):
     pass
@@ -27,6 +28,10 @@ class Supervisor(CustomUser):
 		return True;
 	def eliminar_usuario():
 		return True;
+	# Falta en el diagrama
+	def agregar_usuario(User, Email, Password):
+		user = User.objects.create_user(User, Email, Password)
+		user.save()
 
 class Cobrador(CustomUser):
 	id_cobrador = models.IntegerField(null=False)

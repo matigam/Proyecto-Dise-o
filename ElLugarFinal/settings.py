@@ -42,8 +42,6 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +54,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ElLugarFinal.urls'
+
+STATIC_URL = '/static/'
+
+# Add these new lines
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 TEMPLATES = [
     {
@@ -76,7 +84,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ElLugarFinal.wsgi.application'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'Dashboard'
 LOGOUT_REDIRECT_URL = 'home'
 
 # Database
