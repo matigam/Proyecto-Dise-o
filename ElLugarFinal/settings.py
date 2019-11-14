@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig', # new
     'cobranza', # new
+    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
