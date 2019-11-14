@@ -29,7 +29,7 @@ class Supervisor(CustomUser):
 	def eliminar_usuario():
 		return True;
 	# Falta en el diagrama
-	def agregar_usuario(User, Email, Password):
+	def agregar_usuario(User, Email, Password, Tipo_Usu):
 		user = User.objects.create_user(User, Email, Password)
 		user.save()
 
