@@ -4,13 +4,12 @@ from django.contrib.auth.models import User
 
 class CustomUser(AbstractUser):
     pass
-    rut_usuario = models.CharField(max_length=30, null=False)
-    nombres = models.CharField(max_length=30, null=False)
-    apellidos = models.CharField(max_length=30, null=False)
-    direccion = models.CharField(max_length=30, null=False)
-    telefono_movil = models.IntegerField(null=False)
-    telefono_residencial = models.IntegerField(null=False)
-    correo = models.EmailField(null=False)
+    rut_usuario = models.CharField(max_length=30, null=True)
+    nombres = models.CharField(max_length=30, null=True)
+    apellidos = models.CharField(max_length=30, null=True)
+    direccion = models.CharField(max_length=30, null=True)
+    telefono_movil = models.IntegerField(null=True)
+    telefono_residencial = models.IntegerField(null=True)
 
 
     def __str__(self):

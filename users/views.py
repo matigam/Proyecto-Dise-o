@@ -7,6 +7,9 @@ from users.models import *
 from . import forms
 from django.views import generic
 
+
+
+
 def usuario_crear(request):
 	if request.method == "POST":
 		form = forms.CrearUsuario(request.POST)

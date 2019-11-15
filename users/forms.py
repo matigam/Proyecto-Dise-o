@@ -18,10 +18,10 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('username', 'email')
 
 
-class CrearUsuario(forms.ModelForm):
+class CrearUsuario(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('__all__')
+        fields = ('username','rut_usuario', 'nombres', 'apellidos' , 'direccion' , 'telefono_movil', 'telefono_residencial', 'email', 'is_active')
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
@@ -32,7 +32,7 @@ class CrearUsuario(forms.ModelForm):
 class ModificarUsuario(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ('rut_usuario', 'password', 'nombres', 'apellidos' , 'direccion' , 'telefono_movil', 'telefono_residencial', 'correo', 'is_active')
+        fields = ('username','rut_usuario', 'password', 'nombres', 'apellidos' , 'direccion' , 'telefono_movil', 'telefono_residencial', 'email', 'is_active')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
