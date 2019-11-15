@@ -1,0 +1,21 @@
+{% extends 'base_forms.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Book List</h1>
+
+    {% if ruta_list %}
+    <ul>
+
+      {% for ruta in ruta_list %}
+      <li>
+        <a href="http://127.0.0.1:8000/cobranza/{{ ruta.pk }}/edit">{{ ruta.cobrador }}</a> ({{ruta.fecha_Ruta}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}  
+{% endblock %}

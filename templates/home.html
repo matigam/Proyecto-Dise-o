@@ -1,8 +1,9 @@
 <!-- templates/home.html -->
-{% extends 'base.html' %}
+{% extends 'base_forms.html' %}
 
 {% block title %}Home{% endblock %}
 
+{% load crispy_forms_tags %}
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
