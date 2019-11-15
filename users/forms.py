@@ -18,14 +18,28 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ('username', 'email')
 
 
-
-class CustomUserForm(forms.ModelForm):
+class CrearUsuario(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ('rut_usuario', 'password', 'nombres', 'apellidos' , 'direccion' , 'telefono_movil', 'telefono_residencial', 'correo')
+        fields = ('__all__')
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Agregar usuario'))
+
+
+class ModificarUsuario(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ('rut_usuario', 'password', 'nombres', 'apellidos' , 'direccion' , 'telefono_movil', 'telefono_residencial', 'correo', 'is_active')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Actualizar usuario'))
+
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name', max_length=100)

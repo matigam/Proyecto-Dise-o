@@ -31,14 +31,13 @@ class Supervisor(CustomUser):
 		return True;
 	def asignar_usuario():
 		return True;
-	def modificar_usuario():
-		return True;
+	def modificar_usuario(self, formulario):
+		formulario.save()
 	def eliminar_usuario():
 		return True;
 	# Falta en el diagrama
-	def agregar_usuario(User, Email, Password, Tipo_Usu):
-		user = User.objects.create_user(User, Email, Password)
-		user.save()
+	def agregar_usuario(self, formulario):
+		formulario.save()
 
 class Cobrador(CustomUser):
 	id_cobrador = models.IntegerField(null=False)

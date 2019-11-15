@@ -1,0 +1,21 @@
+{% extends 'base_forms.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Book List</h1>
+
+    {% if customuser_list %}
+    <ul>
+
+      {% for customuser in customuser_list %}
+      <li>
+        <a href="http://127.0.0.1:8000/user/{{ customuser.pk }}/edit">{{ customuser.nombres }}</a> ({{customuser.rut_usuario}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}  
+{% endblock %}

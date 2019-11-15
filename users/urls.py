@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include # new
 from django.views.generic.base import TemplateView # new
-from users.views import *
+from . import views
 
 urlpatterns = [
     path('AddUser', TemplateView.as_view(template_name='users/AddUser.html'), name='AddUser.html'), # new
-    path('add/', UserCreateView.as_view(), name='person_add'),
-    path('<int:pk>/edit/', UserUpdateView.as_view(), name='person_edit'),
+    path('add/', views.usuario_crear, name='person_add'),
+    path('<int:pk>/edit/', views.usuario_modificar, name='person_add'),
+    path('listar/', views.Usuarios_List_View.as_view(), name='books'),
 ]
