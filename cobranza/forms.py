@@ -71,3 +71,25 @@ class ModificarPropietario(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Actualizar Propietario'))
+
+class CrearEstado_Visita(forms.ModelForm):
+    class Meta:
+        model = Estado_Visita
+        fields = ('__all__')
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Agregar Estado Visita'))
+
+
+class ModificarEstado_Visita(forms.ModelForm):
+    class Meta:
+        model = Estado_Visita
+        fields = ('__all__')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Actualizar Estado Visita'))

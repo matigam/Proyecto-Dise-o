@@ -29,4 +29,7 @@ urlpatterns = [
     path('propietario/add/', views.propietario_crear, name='propietario_add'),
     path('propietario/<int:pk>/edit/', views.propietario_modificar, name='propietario_edit'),
     path('propietario/listar/', views.Propietarios_List_View.as_view(), name='propietario_list'),
+    path('estado_visita/add/', views.estado_visita_crear, name='estado_visita_add'),
+    path('estado_visita/<int:pk>/edit/', views.estado_visita_modificar, name='estado_visita_edit'),
+    path('estado_visita/listar/', views.Estados_visita_List_View.as_view(), name='estado_visita_list'),
 ]
