@@ -55,3 +55,26 @@ def visita_modificar(request, pk):
 class Visitas_List_View(generic.ListView):
 	model = Visita
 
+# Create your views here.
+def propietario_crear(request):
+	if request.method == "POST":
+		form = forms.CrearPropietario(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect("http://127.0.0.1:8000/Dashboard")
+	form = forms.CrearPropietario()
+	return render(request, "cobranza/agregar_propietario.html", {'form': form})
+
+def propietario_modificar(request, pk):
+	user = Ruta()
+	instance = Propietario.objects.get(pk=pk)
+	if request.method == "POST":
+		form = forms.ModificarPropietario(request.POST, instance = instance)
+		if form.is_valid():
+			form.save()
+			return redirect("http://127.0.0.1:8000/Dashboard")
+	form = forms.ModificarPropietario(instance = instance)
+	return render(request, "cobranza/modificar_propietario.html", {'form': form})
+
+class Propietarios_List_View(generic.ListView):
+	model = Propietario
