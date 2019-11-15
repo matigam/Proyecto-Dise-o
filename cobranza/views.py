@@ -30,3 +30,28 @@ def ruta_modificar(request, pk):
 
 class Rutas_List_View(generic.ListView):
 	model = Ruta
+
+# Create your views here.
+def visita_crear(request):
+	if request.method == "POST":
+		form = forms.CrearVisita(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect("http://127.0.0.1:8000/Dashboard")
+	form = forms.CrearVisita()
+	return render(request, "cobranza/agregar_visita.html", {'form': form})
+
+def visita_modificar(request, pk):
+	user = Ruta()
+	instance = Visita.objects.get(pk=pk)
+	if request.method == "POST":
+		form = forms.ModificarVisita(request.POST, instance = instance)
+		if form.is_valid():
+			form.save()
+			return redirect("http://127.0.0.1:8000/Dashboard")
+	form = forms.ModificarVisita(instance = instance)
+	return render(request, "cobranza/modificar_visita.html", {'form': form})
+
+class Visitas_List_View(generic.ListView):
+	model = Visita
+

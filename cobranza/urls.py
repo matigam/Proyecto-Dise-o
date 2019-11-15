@@ -20,7 +20,10 @@ from django.views.generic.base import TemplateView # new
 from . import views
 
 urlpatterns = [
-    path('add/', views.ruta_crear, name='person_add'),
-    path('<int:pk>/edit/', views.ruta_modificar, name='person_add'),
-    path('listar/', views.Rutas_List_View.as_view(), name='books'),
+    path('add/', views.ruta_crear, name='ruta_add'),
+    path('<int:pk>/edit/', views.ruta_modificar, name='ruta_edit'),
+    path('listar/', views.Rutas_List_View.as_view(), name='ruta_list'),
+    path('vista/add/', views.ruta_crear, name='vista_add'),
+    path('vista/<int:pk>/edit/', views.visita_modificar, name='vista_edit'),
+    path('vista/listar/', views.Visitas_List_View.as_view(), name='vista_list'),
 ]
