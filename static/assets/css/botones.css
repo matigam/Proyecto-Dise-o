@@ -1,0 +1,16 @@
+  .botonA{
+    text-decoration: none;
+    padding:10px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #4EB69D;
+    border-radius: 9px;
+    border: 2px solid #4EB69D;
+    text-align: center;
+  }
+  .botonA:hover{
+    color: #4EB69D;
+    background-color: #ffffff;
+  }
+
+
