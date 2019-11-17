@@ -99,6 +99,9 @@ def estado_visita_modificar(request, pk):
 			return redirect("http://127.0.0.1:8000/Dashboard")
 	form = forms.ModificarEstado_Visita(instance = instance)
 	return render(request, "cobranza/modificar_estado_visita.html", {'form': form})
+def gestionar_visitas(request):
+	user = CustomUser()
+	return render(request, 'cobranza/gestionar_visitas.html', {})
 
 class Estados_visita_List_View(generic.ListView):
 	model = Estado_Visita
