@@ -4,12 +4,19 @@
 
 {% load crispy_forms_tags %}
 {% block content %}
+<h2>Login</h2>
 <form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-    <div class="row"><div class="col-md-12">
-        <button class="botonA btn btn-lg" type="submit">Ingresar al sistema</button>
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="{{ form.username.id_for_label }}">Username:</label>
+        {{ form.username }}
     </div>
-        </div>
+    <div class="fieldWrapper">
+        {{ form.password.errors }}
+        <label for="{{ form.password.id_for_label }}">Password:</label>
+        {{ form.password }}
+    </div>
+    <button type="submit">Login</button>
 </form>
 {% endblock %}
