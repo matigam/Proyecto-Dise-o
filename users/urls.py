@@ -21,7 +21,9 @@ from . import views
 
 urlpatterns = [
     path('AddUser', TemplateView.as_view(template_name='users/AddUser.html'), name='AddUser.html'), # new
-    path('add/', views.usuario_crear, name='person_add'),
+    path(''
+         'add/', views.usuario_crear, name='person_add'),
     path('<int:pk>/edit/', views.usuario_modificar, name='person_add'),
     path('listar/', views.Usuarios_List_View.as_view(), name='books'),
+    path('gestionar_usuario/', views.gestionar_usuario, name='gesti_usuario'),  # new
 ]

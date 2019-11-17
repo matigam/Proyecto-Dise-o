@@ -32,5 +32,9 @@ def usuario_modificar(request, pk):
 	form = forms.ModificarUsuario(instance = instance)
 	return render(request, "users/modificar_usuario.html", {'form': form})
 
+def gestionar_usuario(request):
+	user = CustomUser()
+	return render(request, 'users/gestionar_usuario.html', {})
+
 class Usuarios_List_View(generic.ListView):
 	model = CustomUser
