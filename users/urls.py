@@ -24,4 +24,6 @@ urlpatterns = [
     path('add/', views.usuario_crear, name='person_add'),
     path('<int:pk>/edit/', views.usuario_modificar, name='person_add'),
     path('listar/', views.Usuarios_List_View.as_view(), name='books'),
+    path('gestionar_usuario/', views.gestionar_usuario, name='gesti_usuario'),  # new
+    path('modificar_usuario/', views.editar_usuario, name='edit_usuario'),
 ]
