@@ -1,0 +1,21 @@
+{% extends 'base_forms.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <select id="scripts" name="customer">
+
+    {% if customers %}
+      {% for customuser in customers %}
+          <option>{{ customuser.pk}}</option>
+      {% endfor %}
+    {% endif %}</select>
+
+    <button onclick = "Function()"> Ingresar </button>
+    <script>
+    function Function(){
+    var sel = document.getElementById('scripts').value;
+    window.open("http://127.0.0.1:8000/user/"+document.getElementById('scripts').value+"/edit/")
+          }
+</script>
+{% endblock %}X

@@ -28,10 +28,14 @@ urlpatterns = [
     path('visita/listar/', views.Visitas_List_View.as_view(), name='vista_list'),
     path('propietario/add/', views.propietario_crear, name='propietario_add'),
     path('propietario/<int:pk>/edit/', views.propietario_modificar, name='propietario_edit'),
+    path('propietario/editar', views.editar_propietario, name='propietario_edit'),
     path('propietario/listar/', views.Propietarios_List_View.as_view(), name='propietario_list'),
     path('estado_visita/add/', views.estado_visita_crear, name='estado_visita_add'),
     path('estado_visita/<int:pk>/edit/', views.estado_visita_modificar, name='estado_visita_edit'),
+    path('editar_visita/', views.editar_visita, name='estado_visita_edit'),
+    path('editar_estado/', views.editar_estado_visita, name='edit_estado'),
     path('estado_visita/listar/', views.Estados_visita_List_View.as_view(), name='estado_visita_list'),
     path('gestionar_visitas/', views.gestionar_visitas, name='gesti_visita'),  # new
-
+    path('modificar/', views.modificar, name='mod'),  # new
+    path('editar_ruta', views.editar_ruta, name='rutas_edit'),
 ]

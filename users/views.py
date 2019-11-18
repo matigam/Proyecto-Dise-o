@@ -35,6 +35,10 @@ def usuario_modificar(request, pk):
 def gestionar_usuario(request):
 	user = CustomUser()
 	return render(request, 'users/gestionar_usuario.html', {})
+def editar_usuario(request):
+	customer = CustomUser.objects.all()
+	context = {'customers': customer}
+	return render(request, 'users/editar_usuario.html', context)
 
 class Usuarios_List_View(generic.ListView):
 	model = CustomUser

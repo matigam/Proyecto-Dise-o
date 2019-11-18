@@ -52,6 +52,16 @@ def visita_modificar(request, pk):
 	form = forms.ModificarVisita(instance = instance)
 	return render(request, "cobranza/modificar_visita.html", {'form': form})
 
+def editar_ruta(request):
+	ruta = Ruta.objects.all()
+	context = {'rutas': ruta}
+	return render(request, 'cobranza/editar_ruta.html', context)
+
+def editar_visita(request):
+	visita = Visita.objects.all()
+	context = {'visitas': visita}
+	return render(request, 'cobranza/editar_visita.html', context)
+
 class Visitas_List_View(generic.ListView):
 	model = Visita
 
@@ -102,6 +112,18 @@ def estado_visita_modificar(request, pk):
 def gestionar_visitas(request):
 	user = CustomUser()
 	return render(request, 'cobranza/gestionar_visitas.html', {})
+def modificar(request):
+	user = CustomUser()
+	return render(request, 'cobranza/modificar.html', {})
+
+def editar_propietario(request):
+	propietario = Propietario.objects.all()
+	context = {'propietarios': propietario}
+	return render(request, 'cobranza/editar_propietario.html', context)
 
 class Estados_visita_List_View(generic.ListView):
 	model = Estado_Visita
+def editar_estado_visita(request):
+	name = Estado_Visita.objects.all()
+	context = {'names': name}
+	return render(request, 'cobranza/editar_estado_visita.html', context)
