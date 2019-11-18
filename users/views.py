@@ -15,7 +15,7 @@ def usuario_crear(request):
 		form = forms.CrearUsuario(request.POST)
 		if form.is_valid():
 			usuario = Supervisor()
-			usuario.agregar_usuario(form)
+			form.save()
 			return redirect("http://127.0.0.1:8000/Dashboard")
 	form = forms.CrearUsuario()
 	return render(request, "users/agregar_usuario.html", {'form': form})
